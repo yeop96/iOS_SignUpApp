@@ -45,27 +45,52 @@
                                     <action selector="touchUpSetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hc-Ra-DOS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEL-Cp-90r">
+                                <rect key="frame" x="10" y="821.5" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="aKi-DK-IiP">
+                                <rect key="frame" x="10" y="596" width="394" height="216"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKi-DK-IiP" secondAttribute="trailing" constant="10" id="5b6-iB-zrC"/>
+                            <constraint firstItem="jEL-Cp-90r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="EJa-0k-Fa3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jEL-Cp-90r" secondAttribute="bottom" constant="20" id="FJE-bl-kOU"/>
                             <constraint firstItem="TaE-3l-8eO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="NMF-cy-We5"/>
+                            <constraint firstItem="aKi-DK-IiP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="X6A-w2-cli"/>
                             <constraint firstItem="981-r5-vLa" firstAttribute="top" secondItem="CHj-xo-Zga" secondAttribute="bottom" constant="20" id="ZiR-J3-5zX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jEL-Cp-90r" secondAttribute="trailing" constant="10" id="b2x-3x-M7V"/>
+                            <constraint firstItem="jEL-Cp-90r" firstAttribute="top" secondItem="aKi-DK-IiP" secondAttribute="bottom" constant="10" id="byZ-2M-Gbz"/>
                             <constraint firstItem="CHj-xo-Zga" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c0X-Fo-J9p"/>
-                            <constraint firstItem="CHj-xo-Zga" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="c8y-HU-w9y"/>
                             <constraint firstItem="981-r5-vLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eeM-ME-0LM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="981-r5-vLa" secondAttribute="trailing" constant="16" id="nqv-Re-dXk"/>
                             <constraint firstItem="CHj-xo-Zga" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="yZf-8S-eMo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TaE-3l-8eO" secondAttribute="trailing" constant="20" id="zdj-xb-Qbh"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DQB-RP-HrN" appends="YES" id="WQG-ls-a2f"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Hf8-iK-jGE"/>
                     <connections>
                         <outlet property="ageField" destination="250-mF-DmZ" id="jHG-Yk-4q8"/>
+                        <outlet property="dateLabel" destination="jEL-Cp-90r" id="qhd-Ya-dle"/>
+                        <outlet property="datePickerL" destination="aKi-DK-IiP" id="fI4-qc-EsX"/>
                         <outlet property="nameField" destination="39m-qx-uaZ" id="vuK-gS-RNl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DQB-RP-HrN">
+                    <connections>
+                        <action selector="tapView:" destination="BYZ-38-t0r" id="BtZ-2z-Vox"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="886.95652173913049" y="71.651785714285708"/>
         </scene>
