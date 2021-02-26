@@ -21,8 +21,8 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.nameLebel.text = UserInformation.shared.name
-        self.ageLabel.text = UserInformation.shared.age
+        self.nameLebel.text = UserInformation.shared.id
+        self.ageLabel.text = UserInformation.shared.pw
         
         print("SecondViewController view 가 화면에 보여질 예정")
     }

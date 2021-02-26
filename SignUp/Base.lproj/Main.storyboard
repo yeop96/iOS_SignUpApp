@@ -39,7 +39,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Tro-vf-3xe">
                                 <rect key="frame" x="100" y="406.5" width="214" height="83"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ljt-Fl-0hG">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ljt-Fl-0hG">
                                         <rect key="frame" x="0.0" y="0.0" width="214" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -64,7 +64,7 @@
                                 <rect key="frame" x="275" y="539.5" width="39" height="30"/>
                                 <state key="normal" title="로그인"/>
                                 <connections>
-                                    <segue destination="X9y-Ix-Gpt" kind="show" id="Zm5-kx-PHG"/>
+                                    <action selector="loginButtonTouchUp:" destination="Obu-3T-Jxo" eventType="touchUpInside" id="v2C-iF-Zxu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,6 +81,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="yeop96" id="0ir-k0-3xH"/>
+                    <connections>
+                        <outlet property="idTextField" destination="Ljt-Fl-0hG" id="9Hb-Ac-NO8"/>
+                        <outlet property="pwTextField" destination="QY5-xs-iNK" id="3Pt-Sd-kkv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxR-Us-4Oi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,14 +98,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-po-LkI">
-                                <rect key="frame" x="87" y="77" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="6dr-KO-0YJ">
-                                <rect key="frame" x="159" y="261" width="104.5" height="148"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="6dr-KO-0YJ">
+                                <rect key="frame" x="155" y="347" width="104.5" height="148"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gg0-QZ-ftp">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gg0-QZ-ftp">
                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -119,46 +119,69 @@
                                 </subviews>
                             </stackView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-YP-HNK">
-                                <rect key="frame" x="0.0" y="479" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="513" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-6h-rt3">
                                 <rect key="frame" x="95" y="746" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="취소"/>
+                                <connections>
+                                    <action selector="backButtonTouch:" destination="eYI-9l-fzQ" eventType="touchUpInside" id="yXA-O6-Z5U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp2-jC-hxQ">
                                 <rect key="frame" x="289" y="746" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="가입"/>
+                                <connections>
+                                    <action selector="signUpButtonTouch:" destination="eYI-9l-fzQ" eventType="touchUpInside" id="OzI-iH-dhU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-Of-o8Z">
-                                <rect key="frame" x="87" y="649" width="59" height="21"/>
+                                <rect key="frame" x="42" y="673" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="오늘" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXb-Uw-6EC">
-                                <rect key="frame" x="335" y="649" width="30" height="21"/>
+                                <rect key="frame" x="241" y="673" width="136" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-po-LkI">
+                                <rect key="frame" x="86.5" y="131" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p4C-Aa-0zQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6dr-KO-0YJ" firstAttribute="centerY" secondItem="B0E-Dc-wzh" secondAttribute="centerY" id="Q8Q-be-jdv"/>
+                            <constraint firstItem="6dr-KO-0YJ" firstAttribute="centerX" secondItem="B0E-Dc-wzh" secondAttribute="centerX" id="vRL-ll-dyJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="5ga-6h-rt3" id="OnB-qw-tE3"/>
+                        <outlet property="dateLabel" destination="ZXb-Uw-6EC" id="QLm-fj-Nra"/>
+                        <outlet property="datePicker" destination="Ghx-YP-HNK" id="CYQ-uS-RUL"/>
+                        <outlet property="idField" destination="gg0-QZ-ftp" id="9fy-rW-VvQ"/>
+                        <outlet property="pwCheckField" destination="NDD-Ez-RlR" id="Gyi-Ke-qMm"/>
+                        <outlet property="pwField" destination="8SL-Hc-hIy" id="zhg-kc-dJP"/>
+                        <outlet property="signUpButton" destination="Wp2-jC-hxQ" id="biS-lw-j3u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4M1-B1-zvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2113" y="-1265"/>
+            <point key="canvasLocation" x="2111.594202898551" y="-1265.625"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="Cd6-dP-vqw">
             <objects>
-                <viewController id="X9y-Ix-Gpt" customClass="UserViewController" customModule="SignUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userViewStory" id="X9y-Ix-Gpt" customClass="UserViewController" customModule="SignUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NBK-lF-QSE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,6 +211,9 @@
                                 <rect key="frame" x="181" y="744" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="돌아가기"/>
+                                <connections>
+                                    <action selector="backButtonTouch:" destination="X9y-Ix-Gpt" eventType="touchUpInside" id="qZN-yp-54F"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ycj-64-cYU"/>
@@ -198,6 +224,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CK6-gW-1Fb"/>
+                    <connections>
+                        <outlet property="backButton" destination="P7f-jB-J65" id="gto-6f-noN"/>
+                        <outlet property="idLabel" destination="Uul-Hy-iMo" id="bfK-zi-uxp"/>
+                        <outlet property="imageView" destination="U8R-FZ-w8l" id="4Uu-Il-V5l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSl-Dy-Kzj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +278,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="aKi-DK-IiP">
-                                <rect key="frame" x="10" y="596" width="394" height="216"/>
+                                <rect key="frame" x="10" y="595.5" width="394" height="216"/>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

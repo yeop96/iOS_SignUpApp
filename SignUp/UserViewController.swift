@@ -9,13 +9,29 @@ import UIKit
 
 class UserViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var idLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.idLabel.text = UserInformation.shared.id
+    }
+    
+    @IBAction func backButtonTouch(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

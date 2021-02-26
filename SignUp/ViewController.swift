@@ -70,8 +70,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func touchUpSetButton(_ sender: UIButton){
-        UserInformation.shared.name = nameField.text
-        UserInformation.shared.age = ageField.text
+        UserInformation.shared.id = nameField.text
+        UserInformation.shared.pw = ageField.text
     }
     
     @IBAction func didDatePickerValueChanged(_ sender: UIDatePicker){
