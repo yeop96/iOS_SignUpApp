@@ -24,6 +24,11 @@ class MainViewController: UIViewController {
     
     @IBAction func loginButtonTouchUp(_ sender: Any) {
         
+        if (idTextField.text == "" || pwTextField.text == ""){
+            self.showToast(message: "공백을 채워주세요.")
+            return
+        }
+        
         Auth.auth().signIn(withEmail: idTextField.text!, password: pwTextField.text!) { (user, error) in
                     if user != nil{ //login success
                     
@@ -43,6 +48,10 @@ class MainViewController: UIViewController {
                     }
               }
         
+    }
+    
+    @IBAction func tapView(_ sender: UITapGestureRecognizer){
+        self.view.endEditing(true)
     }
     
     func showToast(message : String) {

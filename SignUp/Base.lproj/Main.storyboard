@@ -70,6 +70,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="odA-yY-elv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Tro-vf-3xe" firstAttribute="centerY" secondItem="dsI-e2-N8Y" secondAttribute="centerY" id="L2W-LG-Wi9"/>
                             <constraint firstItem="vvD-LO-FZd" firstAttribute="top" secondItem="Tro-vf-3xe" secondAttribute="bottom" constant="50" id="LoR-58-5QC"/>
@@ -79,6 +80,9 @@
                             <constraint firstItem="BoJ-je-SZa" firstAttribute="top" secondItem="Tro-vf-3xe" secondAttribute="bottom" constant="50" id="nwE-Cq-y54"/>
                             <constraint firstItem="odA-yY-elv" firstAttribute="trailing" secondItem="Tro-vf-3xe" secondAttribute="trailing" constant="100" id="zfl-8E-fCf"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HoC-dB-iKL" appends="YES" id="5Pu-vd-PqV"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="yeop96" id="0ir-k0-3xH"/>
                     <connections>
@@ -87,6 +91,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxR-Us-4Oi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HoC-dB-iKL">
+                    <connections>
+                        <action selector="tapView:" destination="Obu-3T-Jxo" id="IUV-9S-KFp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1154" y="-938"/>
         </scene>
@@ -99,82 +108,115 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="6dr-KO-0YJ">
-                                <rect key="frame" x="155" y="347" width="104.5" height="148"/>
+                                <rect key="frame" x="107" y="347" width="200" height="148"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gg0-QZ-ftp">
-                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8SL-Hc-hIy">
-                                        <rect key="frame" x="0.0" y="57" width="104.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="57" width="200" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDD-Ez-RlR">
-                                        <rect key="frame" x="0.0" y="114" width="104.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="114" width="200" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="pgt-ft-wpn"/>
+                                </constraints>
                             </stackView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-YP-HNK">
-                                <rect key="frame" x="0.0" y="513" width="414" height="162"/>
+                            <datePicker contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-YP-HNK">
+                                <rect key="frame" x="0.0" y="548" width="414" height="127"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="-156843917.52711201">
+                                    <!--1996-01-12 16:14:42 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-6h-rt3">
-                                <rect key="frame" x="95" y="746" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-6h-rt3">
+                                <rect key="frame" x="100" y="728" width="30" height="30"/>
                                 <state key="normal" title="취소"/>
                                 <connections>
                                     <action selector="backButtonTouch:" destination="eYI-9l-fzQ" eventType="touchUpInside" id="yXA-O6-Z5U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp2-jC-hxQ">
-                                <rect key="frame" x="289" y="746" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp2-jC-hxQ">
+                                <rect key="frame" x="284" y="728" width="30" height="30"/>
                                 <state key="normal" title="가입"/>
                                 <connections>
                                     <action selector="signUpButtonTouch:" destination="eYI-9l-fzQ" eventType="touchUpInside" id="OzI-iH-dhU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-Of-o8Z">
-                                <rect key="frame" x="42" y="673" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="오늘" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXb-Uw-6EC">
-                                <rect key="frame" x="241" y="673" width="136" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-po-LkI">
-                                <rect key="frame" x="86.5" y="131" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-po-LkI">
+                                <rect key="frame" x="98.5" y="43" width="215.5" height="213.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="VhZ-L9-jJy"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-Tz-LtW">
+                                <rect key="frame" x="157.5" y="267" width="99" height="30"/>
+                                <state key="normal" title="사용자 사진 선택"/>
+                                <connections>
+                                    <action selector="touchUpSelectImageButton:" destination="eYI-9l-fzQ" eventType="touchUpInside" id="0xz-9t-jMc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1996/01/13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXb-Uw-6EC">
+                                <rect key="frame" x="171" y="516" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-Of-o8Z">
+                                <rect key="frame" x="107" y="516" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p4C-Aa-0zQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="d0S-po-LkI" firstAttribute="leading" secondItem="p4C-Aa-0zQ" secondAttribute="leading" constant="100" id="GnY-j1-F3T"/>
+                            <constraint firstItem="Mhe-Tz-LtW" firstAttribute="centerX" secondItem="B0E-Dc-wzh" secondAttribute="centerX" id="Hud-Ca-7nr"/>
+                            <constraint firstItem="p4C-Aa-0zQ" firstAttribute="bottom" secondItem="Wp2-jC-hxQ" secondAttribute="bottom" constant="50" id="Hz3-6m-6BL"/>
+                            <constraint firstItem="6dr-KO-0YJ" firstAttribute="top" secondItem="Mhe-Tz-LtW" secondAttribute="bottom" constant="50" id="IHa-OX-aPH"/>
+                            <constraint firstItem="Mhe-Tz-LtW" firstAttribute="top" secondItem="d0S-po-LkI" secondAttribute="bottom" constant="10" id="JkZ-QC-XdQ"/>
+                            <constraint firstItem="5ga-6h-rt3" firstAttribute="leading" secondItem="p4C-Aa-0zQ" secondAttribute="leading" constant="100" id="Kfq-8o-ryB"/>
+                            <constraint firstItem="p4C-Aa-0zQ" firstAttribute="trailing" secondItem="Wp2-jC-hxQ" secondAttribute="trailing" constant="100" id="ORq-w8-bgG"/>
+                            <constraint firstItem="p4C-Aa-0zQ" firstAttribute="trailing" secondItem="d0S-po-LkI" secondAttribute="trailing" constant="100" id="Pwd-TG-bzJ"/>
                             <constraint firstItem="6dr-KO-0YJ" firstAttribute="centerY" secondItem="B0E-Dc-wzh" secondAttribute="centerY" id="Q8Q-be-jdv"/>
+                            <constraint firstItem="p4C-Aa-0zQ" firstAttribute="bottom" secondItem="5ga-6h-rt3" secondAttribute="bottom" constant="50" id="cKn-ey-blG"/>
                             <constraint firstItem="6dr-KO-0YJ" firstAttribute="centerX" secondItem="B0E-Dc-wzh" secondAttribute="centerX" id="vRL-ll-dyJ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SIG-gS-KlN" appends="YES" id="zja-CV-Znb"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="5ga-6h-rt3" id="OnB-qw-tE3"/>
                         <outlet property="dateLabel" destination="ZXb-Uw-6EC" id="QLm-fj-Nra"/>
                         <outlet property="datePicker" destination="Ghx-YP-HNK" id="CYQ-uS-RUL"/>
                         <outlet property="idField" destination="gg0-QZ-ftp" id="9fy-rW-VvQ"/>
+                        <outlet property="imageView" destination="d0S-po-LkI" id="s3b-2c-eF6"/>
                         <outlet property="pwCheckField" destination="NDD-Ez-RlR" id="Gyi-Ke-qMm"/>
                         <outlet property="pwField" destination="8SL-Hc-hIy" id="zhg-kc-dJP"/>
                         <outlet property="signUpButton" destination="Wp2-jC-hxQ" id="biS-lw-j3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4M1-B1-zvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SIG-gS-KlN">
+                    <connections>
+                        <action selector="tapView:" destination="eYI-9l-fzQ" id="oSB-If-WTc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2111.594202898551" y="-1265.625"/>
         </scene>
